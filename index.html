@@ -42,11 +42,12 @@
             background-color: #007bff;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
             background-color: #0056b3;
+            transform: scale(1.1);
         }
 
         @keyframes fadeIn {
@@ -61,6 +62,7 @@
 
         .image-container {
             margin: 20px 0;
+            animation: zoomIn 0.5s ease-out;
         }
 
         .image-container img {
@@ -68,6 +70,11 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
@@ -84,16 +91,16 @@
     </div>
     <script>
         const facts = [
-            { text: "Honey never spoils.", image: "https://via.placeholder.com/400x200?text=Honey" },
-            { text: "Bananas are berries, but strawberries aren't.", image: "https://via.placeholder.com/400x200?text=Bananas" },
-            { text: "A day on Venus is longer than a year on Venus.", image: "https://via.placeholder.com/400x200?text=Venus" },
-            { text: "Octopuses have three hearts.", image: "https://via.placeholder.com/400x200?text=Octopus" },
-            { text: "The Eiffel Tower can be 15 cm taller during the summer.", image: "https://via.placeholder.com/400x200?text=Eiffel+Tower" },
-            { text: "Some cats are allergic to humans.", image: "https://via.placeholder.com/400x200?text=Cats" },
-            { text: "The unicorn is the national animal of Scotland.", image: "https://via.placeholder.com/400x200?text=Unicorn" },
-            { text: "A group of flamingos is called a 'flamboyance'.", image: "https://via.placeholder.com/400x200?text=Flamingos" },
-            { text: "There are more stars in the universe than grains of sand on Earth.", image: "https://via.placeholder.com/400x200?text=Stars" },
-            { text: "Wombat poop is cube-shaped.", image: "https://via.placeholder.com/400x200?text=Wombat" }
+            { text: "Honey never spoils.", image: "https://example.com/images/honey.jpg" },
+            { text: "Bananas are berries, but strawberries aren't.", image: "https://example.com/images/bananas.jpg" },
+            { text: "A day on Venus is longer than a year on Venus.", image: "https://example.com/images/venus.jpg" },
+            { text: "Octopuses have three hearts.", image: "https://example.com/images/octopus.jpg" },
+            { text: "The Eiffel Tower can be 15 cm taller during the summer.", image: "https://example.com/images/eiffel_tower.jpg" },
+            { text: "Some cats are allergic to humans.", image: "https://example.com/images/cats.jpg" },
+            { text: "The unicorn is the national animal of Scotland.", image: "https://example.com/images/unicorn.jpg" },
+            { text: "A group of flamingos is called a 'flamboyance'.", image: "https://example.com/images/flamingos.jpg" },
+            { text: "There are more stars in the universe than grains of sand on Earth.", image: "https://example.com/images/stars.jpg" },
+            { text: "Wombat poop is cube-shaped.", image: "https://example.com/images/wombat.jpg" }
         ];
 
         function generateFact() {
@@ -106,3 +113,4 @@
     </script>
 </body>
 </html>
+
